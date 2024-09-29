@@ -26,7 +26,7 @@ function HomePage() {
     return (
         <div>
             
-            <div className="landing-image" style={{ height: '75vh', backgroundImage: 'url(/images/landing-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="landing-image" style={{ height: '75vh', backgroundImage: 'url(/images/slider/sliderbg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 
             </div>
             <div className="services-section container mt-5">
