@@ -56,31 +56,30 @@ function HomePage() {
             <div id="services-section" className="services-section container mt-5">
                 <h2>Our Services</h2>
                 <div className="row">
-                    
                     <div className="col-md-4">
-                        <div className="card">
-                            <img className="card-img-top" src="/images/service1.jpg" alt="Service 1" />
-                            <div className="card-body">
-                                <h5 className="card-title">Service 1</h5>
-                                <p className="card-text">Description of Service 1.</p>
+                        <div className="card service-card" style={{ height: '200px' }}>
+                            <img src="/images/service/service3.jpg" alt="Shoe Recycling Program" />
+                            <div className="card-body service-card-body">
+                                <h5 className="card-title">Shoe Recycling Program</h5>
+                                <p className="card-text">Bring in your old shoes for recycling and get a discount on your next purchase, fostering a sustainable cycle.</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card">
-                            <img className="card-img-top" src="/images/service2.jpg" alt="Service 2" />
-                            <div className="card-body">
-                                <h5 className="card-title">Service 2</h5>
-                                <p className="card-text">Description of Service 2.</p>
+                        <div className="card service-card" style={{ height: '200px' }}>
+                            <img src="/images/service/service2.jpg" alt="Eco-Friendly Repair Service" />
+                            <div className="card-body service-card-body">
+                                <h5 className="card-title">Eco-Friendly Repair Service</h5>
+                                <p className="card-text">Extend the life of your footwear with our professional and sustainable repair services.</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card">
-                            <img className="card-img-top" src="/images/service3.jpg" alt="Service 3" />
-                            <div className="card-body">
-                                <h5 className="card-title">Service 3</h5>
-                                <p className="card-text">Description of Service 3.</p>
+                        <div className="card service-card" style={{ height: '200px' }}>
+                            <img src="/images/service/service1.jpg" alt="Exclusive Members-Only Releases" />
+                            <div className="card-body service-card-body">
+                                <h5 className="card-title">Exclusive Members-Only Releases</h5>
+                                <p className="card-text">Gain exclusive access to limited edition products and member-only events.</p>
                             </div>
                         </div>
                     </div>
