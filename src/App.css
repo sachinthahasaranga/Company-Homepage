@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.fixed-height-cards .card {
+  height: 500px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-height-cards .card-body {
+  flex: 1;
+  overflow: auto;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.19); /* Horizontal offset, vertical offset, blur radius, spread radius, and color */
+  transition: box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.card-shadow:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 12px 40px rgba(0,0,0,0.25); /* Enhanced shadow on hover for a dynamic effect */
+}
