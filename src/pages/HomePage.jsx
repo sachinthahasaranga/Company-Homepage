@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -19,17 +22,38 @@ function HomePage() {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
-
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        cssEase: "linear",
+        adaptiveHeight: true
+    };
+    
     return (
         <div>
             
-            <div className="landing-image" style={{ height: '75vh', backgroundImage: 'url(/images/slider/sliderbg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                
+            <div className="landing-slider">
+                <Slider {...settings}>
+                    <div>
+                        <img src="/images/slider/slider1.png" alt="Slide 1"  />
+                    </div>
+                    <div>
+                        <img src="/images/slider/slider2.png" alt="Slide 2"  />
+                    </div>
+                    <div>
+                        <img src="/images/slider/slider3.png" alt="Slide 3"  />
+                    </div>
+                </Slider>
             </div>
-            <div className="services-section container mt-5">
+            <div id="services-section" className="services-section container mt-5">
                 <h2>Our Services</h2>
                 <div className="row">
                     
@@ -62,7 +86,7 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-            <div className="blogs-section container mt-5">
+            <div id="blog-section" className="blogs-section container mt-5">
                 <h2>Latest Blogs</h2>
                 {currentPosts.length > 0 ? (
                     <div className="row fixed-height-cards">
