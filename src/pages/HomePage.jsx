@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Pagination from '../components/Pagination';
 
 
 
 function HomePage() {
     const [blogs, setBlogs] = useState([]);
-    
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(9);
 
     useEffect(() => {
         fetch('https://api.slingacademy.com/v1/sample-data/blog-posts?offset=5&limit=30')
@@ -12,6 +14,14 @@ function HomePage() {
             .then(data => setBlogs(data.blogs))
             .catch(error => console.error('Error fetching blog posts:', error));
     }, []);
+
+    // Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <div>
@@ -54,9 +64,9 @@ function HomePage() {
             </div>
             <div className="blogs-section container mt-5">
                 <h2>Latest Blogs</h2>
-                {blogs.length > 0 ? (
+                {currentPosts.length > 0 ? (
                     <div className="row fixed-height-cards">
-                        {blogs.map(blog => (
+                        {currentPosts.map(blog => (
                             <div key={blog.id} className="col-md-4 mb-4">
                                 <div className="card card-shadow">
                                     <img className="card-img-top" src={blog.photo_url} alt={blog.title} />
@@ -68,6 +78,7 @@ function HomePage() {
                                 </div>
                             </div>
                         ))}
+                        <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
                     </div>
                 ) : (
                     <p>No blogs available at the moment.</p>
