@@ -28,7 +28,7 @@ function NavigationBar() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="nav-right-align">
-                    <Nav className="ml-auto">  {/* Adjust this if needed or keep it as is */}
+                    <Nav className="ml-auto"> 
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link onClick={() => handleScrollTo('services-section')}>Services</Nav.Link>
                         <Nav.Link onClick={() => handleScrollTo('blog-section')}>Blogs</Nav.Link>
