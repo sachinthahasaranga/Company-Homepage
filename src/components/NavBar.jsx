@@ -1,55 +1,42 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-function Navbar() {
+function NavigationBar() {
     const navigate = useNavigate();
 
-    const handleScrollToServices = () => {
+    const handleScrollTo = (sectionId) => {
         navigate("/");
         setTimeout(() => {
-            const servicesSection = document.getElementById('services-section');
-            if (servicesSection) {
-                servicesSection.scrollIntoView({ behavior: 'smooth' });
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 100); 
-    };
-
-    const handleScrollToBlog = () => {
-        navigate("/");
-        setTimeout(() => {
-            const blogSection = document.getElementById('blog-section');
-            if (blogSection) {
-                blogSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 100); 
+        }, 100);
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container">
-                <Link className="navbar-brand" to="/">
-                    <img src="/images/logo.png" alt="UrbanTread Logo" style={{ height: '100px' }} />
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand as={Link} to="/">
+                    <img
+                        src="/images/logo.png"
+                        alt="UrbanTread Logo"
+                        style={{ height: '100px' }}
+                    />
                     UrbanTread
-                </Link>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={handleScrollToServices}>Services</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={handleScrollToBlog}>Blogs</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav" className="nav-right-align">
+                    <Nav className="ml-auto">  {/* Adjust this if needed or keep it as is */}
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link onClick={() => handleScrollTo('services-section')}>Services</Nav.Link>
+                        <Nav.Link onClick={() => handleScrollTo('blog-section')}>Blogs</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 }
 
-export default Navbar;
+export default NavigationBar;
