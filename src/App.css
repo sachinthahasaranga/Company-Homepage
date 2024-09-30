@@ -92,6 +92,22 @@
   }
 }
 
+.section-header {
+  background-color: #e5e7e9ce;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 2px solid #acadad;
+  border-radius: 20px;
+}
+
+.section-title {
+  font-size: 2rem; 
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .service-card {
   height: 100px;
   overflow: hidden;

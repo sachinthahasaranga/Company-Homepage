@@ -54,7 +54,7 @@ function HomePage() {
                 </Slider>
             </div>
             <div id="services-section" className="services-section container mt-5">
-                <h2>Our Services</h2>
+                <h2 className="section-header section-title">Our Services</h2>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card service-card" style={{ height: '200px' }}>
@@ -86,7 +86,7 @@ function HomePage() {
                 </div>
             </div>
             <div id="blog-section" className="blogs-section container mt-5">
-                <h2>Latest Blogs</h2>
+                <h2 className="section-header section-title">Latest Products</h2>
                 {currentPosts.length > 0 ? (
                     <div className="row fixed-height-cards">
                         {currentPosts.map(blog => (
@@ -104,7 +104,7 @@ function HomePage() {
                         <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
                     </div>
                 ) : (
-                    <p>No blogs available at the moment.</p>
+                    <p>No products available at the moment.</p>
                 )}
             </div>
             

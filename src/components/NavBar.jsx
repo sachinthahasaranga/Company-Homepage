@@ -31,7 +31,7 @@ function NavigationBar() {
                     <Nav className="ml-auto"> 
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link onClick={() => handleScrollTo('services-section')}>Services</Nav.Link>
-                        <Nav.Link onClick={() => handleScrollTo('blog-section')}>Blogs</Nav.Link>
+                        <Nav.Link onClick={() => handleScrollTo('blog-section')}>Products</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
