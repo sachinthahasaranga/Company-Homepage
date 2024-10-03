@@ -37,17 +37,6 @@ function Footer() {
                     <div className="col-md-12 col-lg-12">
                         <p>© 2024 UrbanTread</p>
                     </div>
-
-                    <div className="col-md-5 col-lg-4">
-                        <div className="text-center text-md-right">
-                            <ul className="list-unstyled list-inline">
-                                <li className="list-inline-item"><a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: '23px' }}><i className="fab fa-facebook"></i></a></li>
-                                <li className="list-inline-item"><a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: '23px' }}><i className="fab fa-twitter"></i></a></li>
-                                <li className="list-inline-item"><a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: '23px' }}><i className="fab fa-google-plus"></i></a></li>
-                                <li className="list-inline-item"><a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: '23px' }}><i className="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>
