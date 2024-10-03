@@ -170,3 +170,12 @@
     padding-right: 15px;
   }
 }
+
+.list-inline {
+  padding: 10; 
+}
+
+.list-inline-item {
+  flex: 1; 
+  text-align: center; 
+}
